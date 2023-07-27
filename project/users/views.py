@@ -3,11 +3,12 @@ from .models import *
 from .serializers import *
 
 class ListCreateUsersView(generics.ListCreateAPIView):
-    queryset= 'aqui vai o model importado.objects.all()'
-    serializer_class= 'serializerUser'
+    queryset= Users.objects.all()
+    serializer_class= UsersSerializer
+
 
 
 class ListUpdateDeleteUserByID(generics.RetrieveUpdateDestroyAPIView):
-    queryset= 'Users.objects.all()'
-    serializer_class = 'UsersSerializers'
-    lookup_url_kwarg = "users_id"
+    queryset= Users.objects.all()
+    serializer_class = UsersSerializer
+    lookup_url_kwarg = "user_id"
